@@ -130,7 +130,7 @@ nav p:hover span{
 .column img {
     vertical-align: middle;
     max-width: 100%;
-    transition: ease-in 250ms;
+    transition: ease-in-out 250ms;
     cursor:pointer;
     padding-bottom: 8px;
     overflow: hidden;
