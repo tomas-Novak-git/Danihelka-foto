@@ -122,6 +122,9 @@ nav p:hover span{
     grid-template-columns: repeat(3, 1fr);
     column-gap: 8px;
 }
+.row:hover img{
+    opacity: 0.75;
+}
 /* Create four equal columns that sits next to each other */
 
 .column img {
@@ -131,7 +134,6 @@ nav p:hover span{
     cursor:pointer;
     padding-bottom: 8px;
     overflow: hidden;
-    opacity: 0.75;
 }
 .column img:hover{
     opacity: 1;
