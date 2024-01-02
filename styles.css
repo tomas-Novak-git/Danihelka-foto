@@ -2,7 +2,7 @@
     --black: rgb(18,18,18);
     --white: rgb(245,245,245);
     --grey: rgb(200, 200, 200);
-    --color: 
+    --color: rgb(0, 179, 255);
 }
 *,
 *::before,
@@ -16,12 +16,17 @@ html,ul{
 body{
     font-family: 'Sarabun', sans-serif;
     padding: 0px;
-    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1328px;
 }
 /* Styling */
 .wrapper {
-    max-width: 100%;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 nav {
     position: sticky;
     top: 0px;
@@ -43,22 +48,27 @@ nav li {
     padding: 0px;
     font-weight: 200;
     margin: 0 0.7rem;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+    font-size: clamp(1.5rem, 0.86rem + 0.96vw, 1.7rem);   letter-spacing: 2px;
 }
 .icons{
     display:flex;
     justify-content: flex-end;
     align-items: center;
     width: 186px;
+    min-width: 100px;
 }
-nav img{
+.icons a {
     height: 30px;
     width: 30px;
     margin: 0 8px;
 }
+nav img{
+    height: 30px;
+    width: 30px;
+    
+}
 nav p{
-    font-size: 1.7rem;
+    font-size: clamp(1.5rem, 0.86rem + 0.96vw, 1.7rem);
     font-weight: 100;
 }
 nav a {
@@ -69,13 +79,14 @@ nav a {
 .heading-strong {
     font-weight: 500;
     letter-spacing: 2px;
-    transition: ease-in-out 200ms;
+    transition: ease-in-out 300ms;
 }
 .hero-image {
-    position: fixed;
-    top: 0px;
+    /* position: fixed; */
+    margin-top: -75px;
     max-width: 100%;
-    box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.2);
+    max-height: 100vh;
+    /* box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.2); */
 }
 /* HOVER Menu effect */
 li:after {
@@ -85,8 +96,8 @@ li:after {
     left: 0;
     right: 0;
     width: 100%;
-    height: 1px;
-    background-color: var(--white);
+    height: 2px;
+    background-color: var(--color);
     opacity: 0;
     transition: opacity 300ms, transform 300ms;
     transform: scaleX(0);
@@ -98,5 +109,46 @@ li:hover::after{
 }
 
 nav p:hover span{
-    color: var(--grey);
+    color: var(--color);
+}
+
+/* Layout - gallery */
+.gallery {
+    height: auto;
+    width: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 0 4px; */
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 33%;
+    max-width: auto;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    flex-shrink: 1;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
 }
