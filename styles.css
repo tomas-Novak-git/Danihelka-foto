@@ -15,7 +15,8 @@ html,ul{
 }
 body{
     font-family: 'Sarabun', sans-serif;
-    padding: 0px;
+    padding: 0;
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
     max-width: 1328px;
@@ -117,12 +118,12 @@ nav p:hover span{
     height: auto;
     width: auto;
 }
-.row {
+.gallery-block {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 8px;
 }
-.row:hover img{
+.gallery-block:hover img{
     opacity: 0.75;
 }
 /* Create four equal columns that sits next to each other */
