@@ -25,11 +25,6 @@ body{
     background-color: var(--white);
 }
 /* Styling */
-/* .wrapper {
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-} */
 
 nav {
 --text-inverse: rgb(18, 18, 18);
@@ -48,6 +43,8 @@ nav {
     background-color: var(--background);
     padding: 0 2rem;
     height: 75px;
+    transition: ease-in-out 200ms;
+    border-bottom: 2px solid transparent;
 }
 nav li {
     display: inline-block;
@@ -56,7 +53,7 @@ nav li {
     padding: 0px;
     font-weight: 100;
     margin: 0 0.7rem;
-    font-size: clamp(2rem, 0.86rem + 0.96vw, 3rem);
+    font-size: clamp(1.5rem, 0.86rem + 0.96vw, 3rem);
     letter-spacing: 2px;
 }
 nav a {
@@ -72,8 +69,8 @@ nav p{
     --text: rgb(18, 18, 18);
     --text-inverse: rgb(245,245,245);
     --background: rgb(245,245,245);
-    /* box-shadow: 0px 2px 2px 2px rgba(94, 94, 94, 0.483); */
     transition: ease-in-out 200ms;
+    border-bottom: 2px solid var(--color);
 }
 .icons{
     display:flex;
@@ -82,24 +79,31 @@ nav p{
     width: 210px;
     min-width: 100px;
 }
-.icons a {
-    height: 30px;
-    width: 30px;
+.icons a svg{
+    height: 40px;
+    width: 40px;
     margin: 0 8px;
+    transition: ease-in-out 200ms;
 }
-nav img{
-    height: 30px;
-    width: 30px;
-    
+.icons a:first-child{
+    scale: 1.14;
 }
+.icon-white {
+    fill: #f5f5f5;
+}
+.icon-black {
+    fill: #181818;
+}
+
 .heading-strong {
     font-weight: 500;
     letter-spacing: 2px;
+    transition: ease-in-out 200ms;
 }
 .hero-image {
     margin-top: -75px;
     max-width: 100%;
-    max-height: 100vh;
+    /* max-height: 100vh; */
 }
 /* HOVER Menu effect */
 li:after {
@@ -120,8 +124,10 @@ li:hover::after{
     transform: scaleX(1);
     transform-origin: center;
 }
-
-nav p:hover span{
+li:active::after {
+        opacity: 1;
+}
+nav p:hover .heading-strong{
     color: var(--color);
 }
 
