@@ -3,6 +3,7 @@
     --white: rgb(245,245,245);
     --grey: rgb(200, 200, 200);
     --color: rgb(0, 195, 255);
+    --color-opa: rgba(0, 195, 255, 0.750);
     --background: transparent;
 }
 *,
@@ -10,20 +11,19 @@
 *:after{
     box-sizing: border-box;
 }
-html,ul{
+html{
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-}
+    background: linear-gradient(90deg, rgb(200, 200, 200) 0%, rgb(195, 195, 195) 50%, rgba(183, 183, 183, 1) 100%);}
 body{
     font-family: 'Sarabun', sans-serif;
     padding: 0;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1328px;
-    background-color: var(--white);
+    margin: 0;
+    /* background-color: var(--white); */
+    width: 100%;
 }
+
 /* Styling */
 
 nav {
@@ -70,7 +70,7 @@ nav p{
     --text-inverse: rgb(245,245,245);
     --background: rgb(245,245,245);
     transition: ease-in-out 200ms;
-    border-bottom: 2px solid var(--color);
+    border-bottom: 1px solid var(--color-opa);
 }
 .icons{
     display:flex;
@@ -130,11 +130,15 @@ li:active::after {
 nav p:hover .heading-strong{
     color: var(--color);
 }
-
+.wrapper {
+    max-width: 1328px;
+    margin-left: auto;
+    margin-right: auto;
+}
 /* Layout - gallery */
 .gallery {
     height: auto;
-    width: auto;
+    width: 100%;
 }
 .gallery h2 {
     position: relative;
@@ -144,30 +148,150 @@ nav p:hover .heading-strong{
 .gallery-block {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    height: auto;
     column-gap: 8px;
+    row-gap: 8px;
 }
 .gallery-block:hover img{
-    opacity: 0.75;
+    opacity: 0.8;
 }
-/* Create four equal columns that sits next to each other */
+/* photos in grid */
+.gallery-block img:nth-child(1){
+    grid-column: 1;
+    grid-row: 1;
+}
+.gallery-block img:nth-child(2){
+    grid-column: 1;
+    grid-row: 2/span 3;
+}
+.gallery-block img:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+}
+.gallery-block img:nth-child(4) {
+    grid-column: 1;
+    grid-row: 4;
+}
+.gallery-block img:nth-child(5) {
+    grid-column: 1;
+    grid-row: 5/ span 6;
+}
+.gallery-block img:nth-child(6){
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+}
+.gallery-block img:nth-child(7){
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+.gallery-block img:nth-child(8){
+    grid-column: 2;
+    grid-row: 3;
+}
+.gallery-block img:nth-child(9){
+    grid-column: 2;
+    grid-row: 4 / span 5;
+}
+.gallery-block img:nth-child(10){
+    grid-column: 2;
+    grid-row: 5;
+    align-self: end;
+}
+.gallery-block img:nth-child(11){
+    grid-column: 3;
+    grid-row: 1;
+}
+.gallery-block img:nth-child(12){
+    grid-column: 3;
+    grid-row: 2/3;
+}
+.gallery-block img:nth-child(13){
+    grid-column: 3;
+    grid-row: 3;
+}
+.gallery-block img:nth-child(14){
+    grid-column: 3;
+    grid-row: 4;
+}
 
-.column img {
+/* end of imported css grid */
+.gallery-block img {
     vertical-align: middle;
     max-width: 100%;
     transition: ease-in-out 250ms;
     cursor:pointer;
-    padding-bottom: 8px;
-    overflow: hidden;
+    /* padding-bottom: 8px; */
 }
-.column img:hover{
+.gallery-block img:hover{
     opacity: 1;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-    .column {
-        flex: 50%;
+@media screen and (max-width: 768px) {
+    .gallery-block {
+        grid-template-columns: repeat(2, 50%);
+        column-gap: 0px;
+        padding: 0 8px;
     }
+.gallery-block img:nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.gallery-block img:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+.gallery-block img:nth-child(7) {
+    grid-column: 2;
+    grid-row: 2;
+}
+.gallery-block img:nth-child(3) {
+    grid-column: 1/ span 2;
+    grid-row: 9;
+}
+.gallery-block img:nth-child(13) {
+    grid-column: 1/ span 2;
+    grid-row: 3;
+}
+.gallery-block img:nth-child(8) {
+    grid-column: 1/ span 2;
+    grid-row: 4;
+    align-self: end;
+}
+.gallery-block img:nth-child(9) {
+    grid-column: 2;
+    grid-row: 5;
+}
+.gallery-block img:nth-child(12) {
+    grid-column: 1;
+    grid-row: 5;
+}
+.gallery-block img:nth-child(5) {
+    grid-column: 1;
+    grid-row: 10;
+}
+.gallery-block img:nth-child(4) {
+    grid-column: 1 / span 2;
+    grid-row: 6;
+}
+.gallery-block img:nth-child(14) {
+    grid-column: 1/ span 2;
+    grid-row: 7;
+}
+.gallery-block img:nth-child(6) {
+    grid-column: 1/ span 2;
+    grid-row: 8;
+}    
+.gallery-block img:nth-child(15) {
+    grid-column: 2;
+    grid-row: 10;
+}    
+.gallery-block img:nth-child(10) {
+    grid-column: 1/ span 2;
+    grid-row: 11;
+}    
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */

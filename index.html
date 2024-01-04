@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -23,6 +23,7 @@
       rel="stylesheet"
       href="styles.css"
     />
+
     <script
       defer
       src="script.js"
@@ -30,7 +31,10 @@
     <title>Danihelka foto</title>
   </head>
   <body>
-    <nav id="nav-bar">
+    <nav
+      id="nav-bar"
+      class="wrapper"
+    >
       <div>
         <a href="#">
           <p><span class="heading-strong">Danihelka</span>foto</p>
@@ -46,17 +50,13 @@
           href="https://www.facebook.com/danihelkafoto/"
           target="_blank"
         >
-          <!-- <img
-            id="svg-icon1"
-            src="icons/facebook.svg"
-            alt="Facebook link"
-          /> -->
           <svg
             enable-background="new 0 0 56.693 56.693"
             height="100%"
             version="1.1"
             viewBox="0 0 56.693 56.693"
             width="100%"
+            alt="Facebook icon"
           >
             >
             <path
@@ -71,16 +71,12 @@
           href="https://www.instagram.com/jakubdanihelka_fotograf/"
           target="_blank"
         >
-          <!-- <img
-            id="svg-icon2"
-            src="icons/instagram.svg"
-            alt="Instagram link"
-          /> -->
           <svg
             height="90%"
             version="1.1"
             viewBox="0 0 512 512"
             width="90%"
+            alt="Instagram icon"
           >
             <path
               id="svg-icon2"
@@ -92,83 +88,90 @@
         </a>
       </div>
     </nav>
-    <section class="hero">
+    <section class="hero wrapper">
       <img
         class="hero-image"
         src="images/01-full.jpg"
         alt="Hero image"
       />
     </section>
-    <section class="gallery">
+    <section class="gallery wrapper">
       <div class="layout_column">
         <h2 id="gallery">Galerie</h2>
       </div>
       <div class="gallery-block">
-        <div class="column">
-          <img
-            src="images/07.jpg"
-            alt=""
-          />
-
-          <img
-            src="images/16.jpg"
-            alt=""
-          /><img
-            src="images/02.jpg"
-            alt=""
-          />
-          <img
-            <img
-            src="images/09.jpg"
-            alt=""
-          /><img
-            src="images/19.jpg"
-            alt=""
-          />
-        </div>
-        <div class="column">
-          <img
-            src="images/18.jpg"
-            alt=""
-          />
-          <img
-            src="images/15.jpg"
-            alt=""
-          />
-          <img
-            src="images/06.jpg"
-            alt=""
-          />
-          <img
-            src="images/05.jpg"
-            alt=""
-          />
-          <img
-            src="images/04.jpg"
-            alt=""
-          />
-        </div>
-        <div class="column">
-          <img
-            src="images/11.jpg"
-            alt=""
-          />
-          <img
-            src="images/13.jpg"
-            alt=""
-          /><img
-            src="images/12.jpg"
-            alt=""
-          />
-          <img
-            src="images/01.jpg"
-            alt=""
-          />
-          <img
-            src="images/17.jpg"
-            alt=""
-          />
-        </div>
+        <img
+          loading="lazy"
+          src="images/07.jpg"
+          alt="Yoga in nature"
+        />
+        <img
+          loading="lazy"
+          src="images/16.jpg"
+          alt="Portrait"
+        /><img
+          loading="lazy"
+          src="images/02.jpg"
+          alt="Portrait with motorbike"
+        />
+        <img
+          loading="lazy"
+          src="images/09.jpg"
+          alt="Portrait in black and white"
+        /><img
+          loading="lazy"
+          src="images/19.jpg"
+          alt="Barman drink"
+        />
+        <img
+          loading="lazy"
+          src="images/15.jpg"
+          alt="Swimming brown dog"
+        />
+        <img
+          loading="lazy"
+          src="images/18.jpg"
+          alt="Portrait in nature"
+        />
+        <img
+          loading="lazy"
+          src="images/06.jpg"
+          alt="Groom and Bride"
+        />
+        <img
+          loading="lazy"
+          src="images/05.jpg"
+          alt="Portrait in black and white"
+        />
+        <img
+          loading="lazy"
+          src="images/04.jpg"
+          alt="Blond girl in water"
+        />
+        <img
+          loading="lazy"
+          src="images/11.jpg"
+          alt="Wedding photo in nature"
+        />
+        <img
+          loading="lazy"
+          src="images/13.jpg"
+          alt="Portrait of expecting mother"
+        /><img
+          loading="lazy"
+          src="images/12.jpg"
+          alt="Black and white portrait of small child"
+        />
+        <img
+          loading="lazy"
+          src="images/01.jpg"
+          alt="Skate girl"
+        />
+        <img
+          loading="lazy"
+          src="images/17.jpg"
+          alt="Blond in nature"
+        />
       </div>
     </section>
   </body>
