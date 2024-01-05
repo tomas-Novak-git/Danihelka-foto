@@ -87,6 +87,7 @@ nav p{
 }
 .icons a:first-child{
     scale: 1.14;
+    margin-top: -2px;
 }
 .icon-white {
     fill: #f5f5f5;
