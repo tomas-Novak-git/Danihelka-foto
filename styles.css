@@ -1,7 +1,8 @@
 :root {
     --black: rgb(18,18,18);
     --white: rgb(245,245,245);
-    --grey: rgb(200, 200, 200);
+    --grey: rgb(224, 221, 221);
+    /* --grey-bg: rgb(255, 255, 255); */
     --color: rgb(0, 195, 255);
     --color-opa: rgba(0, 195, 255, 0.750);
     --background: transparent;
@@ -97,11 +98,8 @@ nav {
     left: 0px;
     width: 100%;
     z-index: 10;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
     background-color: var(--background);
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
     height: 75px;
     transition: ease-in-out 200ms;
     border-bottom: 2px solid transparent;
@@ -111,9 +109,9 @@ nav li {
     position: relative;
     margin: 0px;
     padding: 0px;
-    font-weight: 200;
+    font-weight: 400;
     margin: 0 0.7rem;
-    font-size: clamp(1.5rem, 0.86rem + 0.96vw, 3rem);
+    font-size: clamp(1rem, 0.66rem + 0.96vw, 2rem);
     letter-spacing: 2px;
 }
 nav a {
@@ -125,6 +123,27 @@ nav p{
     font-size: clamp(2rem, 0.86rem + 0.96vw, 3rem);
     font-weight: 100;
 }
+.nav-grid{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    align-items: center;
+}
+.nav-logo{
+    grid-column: 1;
+    padding-left: 2rem;
+}
+.nav-menu {
+    display: grid;
+    grid-column: 2;
+    justify-items: end;
+    align-items: center;
+    padding-right: 2rem;
+    grid-template-columns: 4fr 3fr 1fr;
+}
+.nav-menu ul{
+    grid-column: 2;
+    display: inline-block;
+}
 .nav-scrolled{
     --text: rgb(18, 18, 18);
     --text-inverse: rgb(245,245,245);
@@ -133,11 +152,10 @@ nav p{
     border-bottom: 1px solid var(--color-opa);
 }
 .icons{
+    grid-column: 3;
     display:flex;
     justify-content: flex-end;
     align-items: center;
-    width: 210px;
-    min-width: 100px;
 }
 .icons a svg{
     height: 40px;
@@ -196,23 +214,27 @@ nav p:hover .heading-strong{
     margin-left: auto;
     margin-right: auto;
 }
+/* .underline {
+    text-decoration: underline wavy 1px var(--color);
+    text-underline-offset: 8px;
+} */
 /* BIO - section */
 .bio {
     position: relative;
     height: auto;
     width: 100%;
-    padding-top: 75px;
-    margin-top: -75px;
+    padding-top: 74px;
+    margin-top: -74px;
     display: grid;
-    /* grid-template-columns: 4fr 2fr 1fr; */
+    background-color: var(--grey-bg);
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 100px 200px repeat(3, 1fr);
+    grid-template-rows: 50px 250px repeat(3, 1fr);
 }
 .bio-heading{
     grid-column:  2;
     grid-row: 2;
     justify-self: start;
-    align-self: flex-start;
+    align-self: end;
 }
 .bio h1 {
     font-size: 4rem;
@@ -226,7 +248,7 @@ nav p:hover .heading-strong{
 .bio-heading h1:after{
     content: "";
     position: absolute;
-    height: 2px;
+    height: 1px;
     width: 50%;
     top: -20px;
     right: -50px;
@@ -235,7 +257,7 @@ nav p:hover .heading-strong{
 .bio-heading p:after{
     content: "";
     position: absolute;
-    height: 2px;
+    height: 1px;
     width: 40%;
     rotate: 90deg;
     top: -90px;
@@ -246,7 +268,7 @@ nav p:hover .heading-strong{
     position: relative;
     font-size: 2.5rem;
     font-weight: 200;
-    color: var(--grey);
+    color: var(--black);
     padding: 0;
     line-height: 2.5rem;
 }
@@ -256,16 +278,51 @@ nav p:hover .heading-strong{
     grid-row: 2 / 4;
     max-height: 650px;
     align-self: end;
-    padding-left: 16px;
+}
+.bio img:last-child{
+    grid-column: 2;
+    grid-row: 5;
+    box-shadow: 8px 12px 14px rgba(18,18,18 , 0.5);
+
+    scale: 0.9;
+    border-radius: 6px;
 }
 .bio article {
-    grid-row: 3;
+    grid-column: 1;
+    grid-row: 4;
+    align-self: center;
 }
-.bio-article {
-    font-size: 1.4rem;
-    max-width: 50ch;
+.bio-intro {
+    font-size: 2rem;
+    width: 25ch;
     background-color: transparent;
-    padding: 16px 0px;
+    grid-row: 3;
+    font-weight: 300;
+    grid-column: 2;
+    padding-left: 2rem;
+    align-self: center;
+    justify-self: center;
+    color: var(--black);
+    position: relative;
+}
+.bio-intro:before,
+.bio-intro:after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: var(--color);
+}
+.bio-intro:before{
+    content: "";
+    width: 40%;
+    rotate: 90deg;
+    left: -5.254rem;
+    bottom: 56px;
+}
+.bio-intro:after{
+    left: -1rem;
+    bottom: -12px;
+    width: 50%;
 }
 .article-heading{
     font-weight: 700;
@@ -280,8 +337,8 @@ nav p:hover .heading-strong{
 }
 .gallery h2 {
     position: relative;
-    padding-top: 75px;
-    margin-top: -75px;
+    padding-top: 74px;
+    margin-top: -74px;
 }
 .gallery-block {
     display: grid;
