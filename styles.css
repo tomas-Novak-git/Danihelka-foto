@@ -2,40 +2,22 @@
     --black: rgb(18,18,18);
     --white: rgb(245,245,245);
     --grey: rgb(224, 221, 221);
-    /* --grey-bg: rgb(255, 255, 255); */
     --color: rgb(0, 195, 255);
     --color-opa: rgba(0, 195, 255, 0.750);
     --background: transparent;
 }
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
-
-/*
-  2. Remove default margin
-*/
 * {
     margin: 0;
 }
-
-/*
-  Typographic tweaks!
-  3. Add accessible line-height
-  4. Improve text rendering
-*/
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
-
-/*
-  5. Improve media defaults
-*/
 img,
 picture,
 video,
@@ -44,20 +26,12 @@ svg {
     display: block;
     max-width: 100%;
 }
-
-/*
-  6. Remove built-in form typography styles
-*/
 input,
 button,
 textarea,
 select {
     font: inherit;
 }
-
-/*
-  7. Avoid text overflows
-*/
 p,
 h1,
 h2,
@@ -67,10 +41,6 @@ h5,
 h6 {
     overflow-wrap: break-word;
 }
-
-/*
-  8. Create a root stacking context
-*/
 #root,
 #__next {
     isolation: isolate;
@@ -84,7 +54,11 @@ body{
     margin: 0;
     width: 100%;
 }
-
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 /* Styling */
 .section-margin{
     padding-top: 74px;
@@ -102,7 +76,6 @@ nav {
     width: 100%;
     z-index: 10;
     background-color: var(--background);
-    /* padding: 0 2rem; */
     height: 75px;
     transition: ease-in-out 200ms;
     border-bottom: 2px solid transparent;
@@ -110,11 +83,9 @@ nav {
 nav li {
     display: inline-block;
     position: relative;
-    margin: 0px;
-    padding: 0px;
+    margin: 0 8px;
     font-weight: 400;
-    margin: 0 0.7rem;
-    font-size: clamp(1rem, 0.66rem + 0.96vw, 2rem);
+    font-size: 1.5rem;
     letter-spacing: 2px;
 }
 nav a {
@@ -123,12 +94,12 @@ nav a {
     cursor: pointer;
 }
 nav p{
-    font-size: clamp(2rem, 0.86rem + 0.96vw, 3rem);
+    font-size: 2.5rem;
     font-weight: 200;
 }
 .nav-grid{
-    display: grid;
-    grid-template-columns: 250px 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 .nav-logo{
@@ -136,16 +107,11 @@ nav p{
     padding-left: 2rem;
 }
 .nav-menu {
-    display: grid;
+    display: flex;
     grid-column: 2;
-    justify-items: end;
+    justify-content: flex-end;
     align-items: center;
     padding-right: 2rem;
-    grid-template-columns: 4fr 3fr 1fr;
-}
-.nav-menu ul{
-    grid-column: 2;
-    display: inline-block;
 }
 .nav-scrolled{
     --text: rgb(18, 18, 18);
@@ -185,7 +151,6 @@ nav p{
 .hero-image {
     margin-top: -75px;
     max-width: 100%;
-    /* max-height: 100vh; */
 }
 /* HOVER Menu effect */
 li:after {
@@ -213,7 +178,7 @@ nav p:hover .heading-strong{
     color: var(--color);
 }
 .wrapper {
-    max-width: 1328px;
+    max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -229,14 +194,13 @@ nav p:hover .heading-strong{
     display: grid;
     background-color: var(--grey-bg);
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px 250px 588px;
+    grid-template-rows: 250px 500px;
 }
 .bio-heading{
     position: relative;
-    left: -32px;
     grid-column: 2;
-    grid-row: 2;
-    justify-self: start;
+    grid-row: 1;
+    justify-self: center;
     align-self: end;
 }
 .bio-head-grid h1 {
@@ -283,7 +247,7 @@ nav p:hover .heading-strong{
 
 .bio-head-grid > img{
     grid-column: 1;
-    grid-row: 2 / 4;
+    grid-row: 1 / span 2;
     max-height: 750px;
     align-self: end;
     padding-left: 4rem;
@@ -293,7 +257,7 @@ nav p:hover .heading-strong{
     font-size: 1.75rem;
     width: 25ch;
     background-color: transparent;
-    grid-row: 3;
+    grid-row: 2;
     font-weight: 300;
     grid-column: 2;
     align-self: center;
@@ -324,6 +288,17 @@ nav p:hover .heading-strong{
     font-weight: 700;
     font-size: 2.2rem;
     padding: 16px 0 0 32px;
+}
+.anchor-styling{
+    text-decoration: none;
+    transition: ease-in-out 200ms;
+    list-style: none;
+    color: var(--color);
+}
+.anchor-styling:hover {
+    color: var(--black);
+    text-decoration: underline 1px var(--color);
+    text-underline-offset: 4px;
 }
 /* bio text */
 .article-grid {
@@ -395,16 +370,15 @@ article p:nth-child(2):after {
 .img-bio-side {
     position: absolute;
     max-height: 500px;
-    right: -5px;
-    bottom: 0px
+    bottom: 0px;
+    right: 0px;
 }
 /* Layout - gallery */
 .gallery {
     height: auto;
     width: 100%;
-    /* margin-top: 74px; */
-        padding-top: 74px;
-            margin-top: -74px;
+    padding-top: 74px;
+    margin-top: -74px;
 }
 
 .gallery h2 {
