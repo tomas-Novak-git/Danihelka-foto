@@ -3,12 +3,14 @@ const svgOne = document.querySelector("#svg-icon1")
 const svgTwo = document.querySelector("#svg-icon2")
 const images = document.querySelector(".icons")
 const sectionOne = document.querySelector(".hero");
+const hamburger = document.querySelector("#dropdown");
 
 const sectionOneOptions= {
-    rootMargin: "-175px 0px 0px 0px"
+    rootMargin: "-250px 0px 0px 0px"
 };
 
-const sectionOneObserver = new IntersectionObserver(function(entries, sectionOneObserver){
+
+const sectionOneObserver = new IntersectionObserver(function(entries){
     entries.forEach(entry => {
         if(!entry.isIntersecting) {
             header.classList.add('nav-scrolled');
@@ -21,5 +23,13 @@ const sectionOneObserver = new IntersectionObserver(function(entries, sectionOne
         }
     })
 }, sectionOneOptions);
+const hamMenu = document.querySelector(".ham-menu");
+
+const navMenu = document.querySelector(".nav-menu");
+
+hamMenu.addEventListener("click", () => {
+  hamMenu.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
 
 sectionOneObserver.observe(sectionOne);

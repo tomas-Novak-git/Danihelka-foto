@@ -1,8 +1,8 @@
 :root {
     --black: rgb(18,18,18);
-    --white: rgb(245,245,245);
+    --white: rgb(253, 253, 253);
     --grey: rgb(224, 221, 221);
-    --color: rgb(0, 195, 255);
+    --color: rgb(0, 187, 244);
     --color-opa: rgba(0, 195, 255, 0.750);
     --background: transparent;
 }
@@ -66,10 +66,10 @@ ul{
 }
 nav {
 --text-inverse: rgb(18, 18, 18);
---text: rgb(245, 245, 245);
+--text: rgb(253, 253, 253);
 --background: transparent;
 
-    position: sticky;
+    position: fixed;
     top: 0px;
     right: 0px;
     left: 0px;
@@ -94,7 +94,7 @@ nav a {
     cursor: pointer;
 }
 nav p{
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 200;
 }
 .nav-grid{
@@ -115,10 +115,12 @@ nav p{
 }
 .nav-scrolled{
     --text: rgb(18, 18, 18);
-    --text-inverse: rgb(245,245,245);
-    --background: rgb(245,245,245);
+    --text-inverse: rgb(253, 253, 253);
+    --background: rgb(253,
+        253,
+        253);
     transition: ease-in-out 200ms;
-    border-bottom: 1px solid var(--color-opa);
+    border-bottom: 1px solid var(--color);
 }
 .icons{
     grid-column: 3;
@@ -133,14 +135,21 @@ nav p{
     transition: ease-in-out 200ms;
 }
 .icons a:first-child{
-    scale: 1.15;
+    transform: scale(1.15);
     margin-top: -3px;
 }
+/* changing colors through scroll on nav bar */
 .icon-white {
-    fill: #f5f5f5;
+    fill: #fdfdfd;
 }
 .icon-black {
     fill: #181818;
+}
+.hamburger-scroll-change-w{
+    background-color: #fdfdfd;
+}
+.hamburger-scroll-change-b{
+    background-color: #181818;
 }
 
 .heading-strong {
@@ -151,6 +160,10 @@ nav p{
 .hero-image {
     margin-top: -75px;
     max-width: 100%;
+}
+/* HAMBURGER MENU */
+.ham-menu {
+    display: none;
 }
 /* HOVER Menu effect */
 li:after {
@@ -255,7 +268,7 @@ nav p:hover .heading-strong{
 
 .bio-intro {
     font-size: 1.75rem;
-    width: 25ch;
+    max-width: 25ch;
     background-color: transparent;
     grid-row: 2;
     font-weight: 300;
@@ -549,12 +562,232 @@ article p:nth-child(2):after {
 }
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 768px) {
-    .gallery-block {
-        grid-template-columns: repeat(2, 50%);
-        column-gap: 8px;
-        row-gap: 8px;
-        padding: 0 16px;
-    }
+    .section-margin {
+            padding-top: 73px;
+            margin-top: -73px;
+        }
+nav{
+    height: 73px;
+}
+nav p {
+    font-size: clamp(1.3rem, 0.8rem + 2.5vw, 2rem);
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: min(8rem, 20%);
+    padding-right: 0;
+    position: fixed;
+    justify-content: start;
+    gap: 4rem;
+    z-index: 101;
+    inset: 0 0 0 45%;
+    background-color: var(--white);
+    transform: translatex(100%);
+    transition: transform ease-in 200ms;
+    border-left: 1px solid var(--color)
+}
+.nav-menu.active{
+    transform: translatex(0%);
+}
+nav li a {
+    font-size: clamp(1.3rem, 0.8rem + 2.5vw, 2rem);
+    color: #181818;
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: max-content;
+}
+nav li {
+    display: flex;
+    justify-content: center;
+}
+#svg-icon1, #svg-icon2 {
+    fill:#181818;
+}
+/* HAMBURGER RESPONSIVE */
+.ham-menu {
+    display: block;
+    height: 32px;
+    width: 32px;
+    margin-left: auto;
+    position: absolute;
+    z-index: 110;
+    right: 2rem;
+    top: 1.5rem
+}
+
+.ham-menu span {
+    height: 4px;
+    width: 100%;
+    background-color:  var(--text);
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span {
+    background-color: var(--black);
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* Hamburger End */
+
+/* Bio */
+.bio-heading{
+    grid-column: 1 / span 2;
+    justify-self: center;
+}
+.bio-heading h1 {
+    margin: 0;
+}
+.bio-intro{
+    font-size: 1.5rem;
+    align-self: start;
+    justify-self: center;
+    padding-top: 7rem;
+    margin-left: 2rem;
+}
+.bio-head-grid > img {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    max-height: 500px;
+    max-width: 400px;
+    align-self: end;
+    padding-left: 1rem;
+}
+.bio-heading h1:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 50%;
+    top: -10px;
+    right: -40px;
+    background-color: var(--color);
+}
+.bio-heading p:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 40%;
+    rotate: 90deg;
+    top: -90px;
+    right: -90px;
+    background-color: var(--color);
+}
+.bio-intro:after{
+    left: -2.5rem;
+    bottom: -0.7rem;
+}
+.bio-intro:before{
+    left: -5.5rem
+}
+.img-bio-side{
+    display: none;
+}
+
+.article-grid{
+    grid-template-columns: 1fr 7fr 1fr;
+    gap: 0;
+}
+article p {
+    font-size: 1.35rem;
+    font-weight: 300;
+    max-width: 45ch;
+    /* padding: 8px 16px; */
+}
+
+article p:nth-child(1) {
+    position: relative;
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+    align-self: start;
+}
+
+article p:nth-child(1):before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: var(--color);
+    width: 20%;
+    top: -0.5rem;
+    left: -2rem;
+}
+
+article p:nth-child(1):after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: var(--color);
+    width: 20%;
+    top: 1.5rem;
+    left: -4.2rem;
+    rotate: 90deg;
+}
+
+article p:nth-child(2) {
+    position: relative;
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: center;
+    align-self: end;
+}
+
+article p:nth-child(2):before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: var(--color);
+    width: 20%;
+    bottom: 1.5rem;
+    right: -4rem;
+    rotate: 90deg;
+}
+
+article p:nth-child(2):after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: var(--color);
+    width: 20%;
+    bottom: -0.6rem;
+    right: -2rem;
+}
+/*  */
+
+.gallery-block {
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 8px;
+    row-gap: 8px;
+    padding: 0 16px;
+}
 
 .gallery-block img:nth-child(1) {
     grid-column: 1 / span 2;
@@ -614,12 +847,4 @@ article p:nth-child(2):after {
     grid-column: 1/ span 2;
     grid-row: 11;
 }    
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
 }
