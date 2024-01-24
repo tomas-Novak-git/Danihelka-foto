@@ -65,14 +65,33 @@
         class="nav-menu"
       >
         <ul>
-          <li><a href="#bio">Bio</a></li>
-          <li><a href="#gallery">Galerie</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li>
+            <a
+              onclick="hamburgerCloser()"
+              href="#bio"
+              >Bio</a
+            >
+          </li>
+          <li>
+            <a
+              onclick="hamburgerCloser()"
+              href="#gallery"
+              >Galerie</a
+            >
+          </li>
+          <li>
+            <a
+              onclick="hamburgerCloser()"
+              href="#kontakt"
+              >Kontakt</a
+            >
+          </li>
         </ul>
         <div class="icons nav-icons">
           <a
             href="https://www.facebook.com/danihelkafoto/"
             target="_blank"
+            onclick="hamburgerCloser()"
           >
             <svg
               enable-background="new 0 0 56.693 56.693"
@@ -94,6 +113,7 @@
           <a
             href="https://www.instagram.com/jakubdanihelka_fotograf/"
             target="_blank"
+            onclick="hamburgerCloser()"
           >
             <svg
               height="90%"
@@ -112,7 +132,10 @@
           </a>
         </div>
       </div>
-      <div class="ham-menu">
+      <div
+        class="ham-menu"
+        onclick="hamburgerCloser()"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -175,7 +198,7 @@
             >.
           </p>
           <img
-            class="img-bio-side"
+            class="img-bio-side img-bot"
             src="images/jakub-bio-side.png"
             alt="Jakub Danihelka fotografie fotografa"
           />

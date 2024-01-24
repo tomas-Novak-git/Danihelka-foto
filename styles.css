@@ -368,7 +368,7 @@ article p:nth-child(2):before{
     background-color: var(--color);
     width: 20%;
     bottom: 1rem;
-    right: 1rem;
+    right: -4rem;
     rotate: 90deg;
 }
 article p:nth-child(2):after {
@@ -378,13 +378,16 @@ article p:nth-child(2):after {
     background-color: var(--color);
     width: 20%;
     bottom: -1rem;
-    right: 3rem;
+    right: -2rem;
 }
 .img-bio-side {
     position: absolute;
-    max-height: 500px;
+    max-height: 400px;
     bottom: 0px;
     right: 0px;
+}
+.img-bot{
+    bottom: 13rem
 }
 /* Layout - gallery */
 .gallery {
@@ -528,6 +531,8 @@ article p:nth-child(2):after {
     bottom: 2rem;
     left: -2.3rem;
 }
+.hamLink{
+}
 .kontakt-font {
     color: var(--white);
     max-width: 50ch;
@@ -537,6 +542,7 @@ article p:nth-child(2):after {
 .kontakt-block{
     text-align: center;
     max-width: 40ch;
+    margin: 6rem 0;
 }
 .kontakt-block h3{
     font-size: 3rem;
@@ -549,7 +555,7 @@ article p:nth-child(2):after {
     padding: 1.75rem 0;
 }
 .footer-section {
-    height: 80px;
+    height: 50px;
     position: relative;
     background-color: var(--black);
     display: flex;
@@ -591,6 +597,15 @@ nav p {
 .nav-menu.active{
     transform: translatex(0%);
 }
+.nav-scrolled {
+    --text: rgb(18, 18, 18);
+    --text-inverse: rgb(253, 253, 253);
+    --background: rgb(253,
+            253,
+            253);
+    transition: ease-in-out 200ms;
+    border-bottom: 1px solid var(--color);
+}
 nav li a {
     font-size: clamp(1.3rem, 0.8rem + 2.5vw, 2rem);
     color: #181818;
@@ -617,7 +632,8 @@ nav li {
     position: absolute;
     z-index: 110;
     right: 2rem;
-    top: 1.5rem
+    top: 1.5rem;
+    cursor: ;
 }
 
 .ham-menu span {

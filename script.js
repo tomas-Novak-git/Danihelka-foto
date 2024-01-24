@@ -4,6 +4,11 @@ const svgTwo = document.querySelector("#svg-icon2")
 const images = document.querySelector(".icons")
 const sectionOne = document.querySelector(".hero");
 const hamburger = document.querySelector("#dropdown");
+const linkOne = document.querySelector("#link-1")
+const linkTwo = document.querySelector("#link-2")
+const linkThree = document.querySelector("#link-3")
+const linkFour = document.querySelector("#link-4")
+const linkFive = document.querySelector("#link-5")
 
 const sectionOneOptions= {
     rootMargin: "-250px 0px 0px 0px"
@@ -27,9 +32,11 @@ const hamMenu = document.querySelector(".ham-menu");
 
 const navMenu = document.querySelector(".nav-menu");
 
-hamMenu.addEventListener("click", () => {
-  hamMenu.classList.toggle("active");
-  navMenu.classList.toggle("active");
-});
+const hamburgerCloser = () => {
+    hamMenu.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
 
 sectionOneObserver.observe(sectionOne);
+hamburgerCloser();
