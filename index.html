@@ -41,10 +41,20 @@
       href="styles.css"
     />
     <link
+      rel="stylesheet"
+      href="/"
+    />
+
+    <link
       rel="icon"
       type="image/x-icon"
       href="fav-danihelka-bright.png"
     />
+    <script
+      defer
+      src="venobox/venobox.min.js"
+    ></script>
+
     <script
       defer
       src="script.js"
@@ -214,11 +224,17 @@
       </div>
 
       <div class="gallery-block">
-        <img
-          loading="lazy"
-          src="images/07.jpg"
-          alt="Yoga in nature"
-        />
+        <a
+          href="images/07.jpg"
+          class="my-image-links venobox"
+          data-gall="gallery01"
+        >
+          <img
+            loading="lazy"
+            src="images/07.jpg"
+            alt="Yoga in nature"
+          />
+        </a>
         <img
           loading="lazy"
           src="images/16.jpg"
