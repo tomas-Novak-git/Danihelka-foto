@@ -420,6 +420,8 @@ article p:nth-child(2):after {
 .gallery-block:hover img{
     opacity: 0.8;
 }
+
+
 /* photos in grid */
 .gallery-block img{
     border: 1px solid rgba(255, 255, 255, 0.8);
@@ -483,13 +485,11 @@ article p:nth-child(2):after {
     grid-row: 4;
 }
 
-/* end of imported css grid */
 .gallery-block img {
     vertical-align: middle;
     max-width: 100%;
     transition: ease-in-out 250ms;
     cursor:pointer;
-    /* padding-bottom: 8px; */
 }
 .gallery-block img:hover{
     opacity: 1;

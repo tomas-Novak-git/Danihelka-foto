@@ -14,7 +14,7 @@ const sectionOneOptions= {
     rootMargin: "-250px 0px 0px 0px"
 };
 
-
+// Scroll menu background change
 const sectionOneObserver = new IntersectionObserver(function(entries){
     entries.forEach(entry => {
         if(!entry.isIntersecting) {
@@ -28,14 +28,21 @@ const sectionOneObserver = new IntersectionObserver(function(entries){
         }
     })
 }, sectionOneOptions);
+
+
+
 const hamMenu = document.querySelector(".ham-menu");
 
 const navMenu = document.querySelector(".nav-menu");
 
+// hamburger closer
 const hamburgerCloser = () => {
     hamMenu.classList.toggle("active");
     navMenu.classList.toggle("active");
 }
+
+// Lightbox JS
+
 
 
 sectionOneObserver.observe(sectionOne);
