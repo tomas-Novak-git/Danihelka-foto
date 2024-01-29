@@ -531,8 +531,7 @@ article p:nth-child(2):after {
     bottom: 2rem;
     left: -2.3rem;
 }
-.hamLink{
-}
+
 .kontakt-font {
     color: var(--white);
     max-width: 50ch;
@@ -633,7 +632,7 @@ nav li {
     z-index: 110;
     right: 2rem;
     top: 1.5rem;
-    cursor: ;
+    cursor: pointer;
 }
 
 .ham-menu span {
