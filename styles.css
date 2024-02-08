@@ -47,7 +47,9 @@ h6 {
 }
 html{
     scroll-behavior: smooth;
-    background: var(--white);}
+    background: var(--white);
+    width: 100%;
+}
 body{
     font-family: 'Sarabun', sans-serif;
     padding: 0;
@@ -88,7 +90,7 @@ nav li {
     font-size: 1.5rem;
     letter-spacing: 2px;
 }
-nav a {
+a {
     text-decoration: none;
     color: var(--text);
     cursor: pointer;
@@ -156,6 +158,14 @@ nav p{
     font-weight: 500;
     letter-spacing: 2px;
     transition: ease-in-out 200ms;
+}
+.hero {
+    background-image:url("/images/01-full.jpg");
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
 }
 .hero-image {
     margin-top: -75px;
@@ -495,63 +505,69 @@ article p:nth-child(2):after {
     opacity: 1;
 }
 /* kontakt */
+.link-hover{
+    color: var(--white);
+    transition: ease-in-out 200ms;
+}
+.link-hover:hover{
+    color:var(--color-opa)
+}
 .kontakt-section {
-    background-color: var(--black);
+background: rgb(18, 18, 18);
+    background: linear-gradient(180deg, rgba(18, 18, 18, 1) 0%, rgba(99, 219, 255, 1) 49%, rgba(253, 253, 253, 1) 100%);
+    height: calc(100vh - 80px);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 .kontakt-text{
     grid-column: 2;
     grid-row: 6;
-    padding: 3rem 0;
+    /* padding: 3rem 0; */
     font-size: 1.5rem;
     font-weight: 300;
-    max-width: 40ch;
+    max-width: 30ch;
     position: relative;
     color: var(--white);
 }
-.kontakt-text::before{
-    content: "";
-    position: absolute;
-    height: 1px;
-    background-color: var(--color);
-    width: 20%;
-    bottom: 3.8rem;
-    left: -4rem;
-    rotate: 90deg;
-}
-.kontakt-text::after{
-    content: "";
-    position: absolute;
-    height: 1px;
-    background-color: var(--color);
-    width: 40%;
-    bottom: 2rem;
-    left: -2.3rem;
-}
+
 
 .kontakt-font {
-    color: var(--white);
     max-width: 50ch;
     line-height: 1.7rem;
     font-size: 1.15rem;
+    color: var(--white);
+}
+.kontakt-font h3, h4 {
+    text-align: center;
+    color: var(--white);
+}
+.kontakt-font p:last-of-type{
+    padding-top: 8px;
+    text-align: center;
 }
 .kontakt-block{
-    text-align: center;
-    max-width: 40ch;
-    margin: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    max-width: 50ch;
+    padding: 2rem 2rem;
+    background-color: rgba(18, 18, 18, 0.4);
+    border-radius: 15px;
+    box-shadow: inset 5px 5px 5px rgba(253, 253, 253, 0.2);
+    box-shadow: 0 0 10px 5px rgba(0, 195, 255, 0.2);
 }
 .kontakt-block h3{
     font-size: 3rem;
-    padding: 1.5rem 0;
-    text-decoration: underline 1px var(--color);
-    text-underline-offset: 12px;
 }
 .kontakt-block h4{
     font-size: 2rem;
     padding: 1.75rem 0;
+}
+i {
+    padding-right: 8px;
 }
 .footer-section {
     height: 50px;
@@ -563,7 +579,7 @@ article p:nth-child(2):after {
 }
 .footer-section p {
     font-size: 1rem;
-    color: var(--color-opa);
+    cursor: pointer;
 }
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 768px) {
@@ -724,7 +740,7 @@ nav li {
     left: -5.5rem
 }
 .img-bio-side{
-    display: none;
+    display: visible;
 }
 
 .article-grid{

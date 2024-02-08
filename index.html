@@ -58,6 +58,10 @@
       defer
       src="script.js"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/6cd54a1473.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav
@@ -150,13 +154,7 @@
         <span></span>
       </div>
     </nav>
-    <section class="hero wrapper">
-      <img
-        class="hero-image"
-        src="images/01-full.jpg"
-        alt="Hero image"
-      />
-    </section>
+    <section class="hero wrapper"></section>
     <section
       id="bio"
       class="section-margin"
@@ -390,10 +388,7 @@
         </a>
       </div>
     </section>
-    <section
-      id="kontakt"
-      class="section-margin"
-    >
+    <section class="section-margin">
       <div class="wrapper kontakt-section">
         <p class="kontakt-text">
           Pokud jsem Vám padl do oka a zaujala Vás moje tvorba, zanechte zprávu
@@ -404,10 +399,25 @@
         <div class="kontakt-block kontakt-font">
           <h3>Kontakt</h3>
           <h4>Jakub Danihelka fotograf</h4>
-          <p>jakub.danihelka@gmail.com</p>
-          <p>+420 775 529 021</p>
-          <p>Ke Hrázi 26, Pardubice 53002</p>
-          <p>IČ: 09435964, nejsem plátcem DPH</p>
+          <div style="margin-left: auto; margin-right: auto">
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              <span class="link-hover"
+                ><a href="mailto:jakub.danihelka@gmail.com"
+                  >jakub.danihelka@gmail.com</a
+                ></span
+              >
+            </p>
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              <span class="link-hover"
+                ><a href="tel:775529021">+420 775 529 021</a></span
+              >
+            </p>
+            <p><i class="fa-solid fa-house"></i>Ke Hrázi 26, Pardubice 53002</p>
+
+            <p>IČ: 09435964, nejsem plátcem DPH</p>
+          </div>
           <p>
             Fyzická osoba zapsaná v Živnostenském rejstříku v Pardubicích od 21.
             8. 2020.
@@ -415,12 +425,19 @@
         </div>
       </div>
     </section>
-    <footer class="wrapper footer-section">
-      <p>© 2024 Danihelka Jakub - fotograf</p>
+    <footer
+      id="kontakt"
+      class="wrapper footer-section"
+    >
+      <span class="link-hover">
+        <a href="#">
+          <p>© 2024 Danihelka Jakub - fotograf</p>
+        </a>
+      </span>
       <img
         src="images/jakub-bio-side.png"
         alt="Jakub Danihelka"
-        class="img-bio-side"
+        class="img-bio-side img-footer"
       />
     </footer>
   </body>
