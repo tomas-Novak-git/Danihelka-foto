@@ -78,7 +78,7 @@ nav {
     width: 100%;
     z-index: 10;
     background-color: var(--background);
-    height: 75px;
+    height: 73px;
     transition: ease-in-out 200ms;
     border-bottom: 2px solid transparent;
 }
@@ -113,7 +113,7 @@ nav p{
     grid-column: 2;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 2rem;
+    padding-right: 1rem;
 }
 .nav-scrolled{
     --text: rgb(18, 18, 18);
@@ -549,6 +549,8 @@ background: rgb(18, 18, 18);
 }
 .kontakt-block{
     display: flex;
+    position: relative;
+    z-index: 100;
     flex-direction: column;
     justify-content: center;
     text-align: left;
@@ -582,6 +584,43 @@ i {
     cursor: pointer;
 }
 /* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1024px){
+    .img-bio-side{
+        display: none;
+    }
+    .bio-heading {
+        justify-self: flex-start;
+    }
+    .bio-head-grid h1 {
+        font-size: clamp(3.5rem, 1.9862rem + 3.1496vw, 4rem);
+        
+    }
+}
+
+@media screen and (max-width: 850px){
+    .bio-heading {
+        grid-column: 1 / span 2;
+        justify-self: center;
+    }
+    .bio-heading h1 {
+        margin: 0;
+        text-decoration: underline 2px var(--color-opa);
+        text-underline-offset: 8px;
+    }
+    .bio-heading h1:after, .bio-heading p:after{
+        display: none;
+    }
+    .bio-head-grid > img {
+        padding-left: 1rem;
+    }
+    .bio-intro {
+        font-size: clamp(1.45rem, 0.0259rem + 2.963vw, 1.6rem);
+    }
+    .bio-intro:before, .bio-intro:after {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .section-margin {
             padding-top: 73px;
@@ -692,21 +731,25 @@ nav li {
 
 /* Bio */
 .bio-heading{
-    grid-column: 1 / span 2;
-    justify-self: center;
+    grid-column: 2 / span 4 ;
+    justify-self: start;
 }
 .bio-heading h1 {
     margin: 0;
 }
 .bio-intro{
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 0.2056rem + 2.6966vw, 1.5rem);
     align-self: start;
     justify-self: center;
-    padding-top: 7rem;
-    margin-left: 2rem;
+    padding-top: 4rem;
+    /* margin-left: 2rem; */
+    grid-column: 3/ span 4;
+}
+.bio-head-grid {
+    grid-template-columns: repeat(4,1fr);
 }
 .bio-head-grid > img {
-    grid-column: 1;
+    grid-column: 1 / span 2;
     grid-row: 1 / span 2;
     max-height: 500px;
     max-width: 400px;
@@ -810,6 +853,9 @@ article p:nth-child(2):after {
     width: 20%;
     bottom: -0.6rem;
     right: -2rem;
+}
+.img-bio-side{
+    display: none;
 }
 /*  */
 
