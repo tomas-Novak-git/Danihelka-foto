@@ -559,7 +559,7 @@ background: rgb(18, 18, 18);
     background-color: rgba(18, 18, 18, 0.4);
     border-radius: 15px;
     box-shadow: inset 5px 5px 5px rgba(253, 253, 253, 0.2);
-    box-shadow: 0 0 10px 5px rgba(122,122,122 , 0.2);
+    box-shadow: 0 0 10px 5px rgba(122,122,122 , 0.21);
 }
 .kontakt-block h3{
     font-size: 3rem;
