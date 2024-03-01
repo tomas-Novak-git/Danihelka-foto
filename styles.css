@@ -428,7 +428,7 @@ article p:nth-child(2):after {
     background-color: var(--black);
 }
 .gallery-block:hover img{
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 
