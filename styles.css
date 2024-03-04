@@ -76,7 +76,7 @@ nav {
     right: 0px;
     left: 0px;
     width: 100%;
-    z-index: 10;
+    z-index: 101;
     background-color: var(--background);
     height: 75px;
     transition: ease-in-out 200ms;
@@ -392,7 +392,7 @@ article p:nth-child(2):after {
 }
 .img-bio-side {
     position: absolute;
-    max-height: 400px;
+    max-height: 300px;
     bottom: 65px;
     right: 0px;
 }
@@ -593,7 +593,6 @@ i {
     }
     .bio-head-grid h1 {
         font-size: clamp(3.5rem, 1.9862rem + 3.1496vw, 4rem);
-        
     }
 }
 
@@ -639,7 +638,7 @@ nav p {
     padding-top: min(8rem, 20%);
     padding-right: 0;
     position: fixed;
-    justify-content: start;
+    justify-content: space-evenly;
     gap: 4rem;
     z-index: 101;
     inset: 0 0 0 45%;
@@ -731,8 +730,8 @@ nav li {
 
 /* Bio */
 .bio-heading{
-    grid-column: 2 / span 4 ;
-    justify-self: start;
+    grid-column: 1 / span 4 ;
+    justify-self: center;
 }
 .bio-heading h1 {
     margin: 0;
@@ -932,4 +931,127 @@ article p:nth-child(2):after {
     grid-column: 1 / span 2;
     grid-row: 13;
 }    
+.kontakt-text{
+    font-size: 1.4rem;
+}
+}
+
+@media screen and (max-width: 520px) {
+    .bio-heading {
+        grid-column: 1 / span 4;
+        justify-self: center;
+        align-self: center;
+    }
+    .bio-heading h1 {
+        font-size: clamp(2.5rem, 0.8333rem + 6.6667vw, 3rem);
+        line-height: 3rem;
+        text-underline-offset: 4px;
+    }
+    .bio-heading p {
+        font-size: clamp(1.7rem, 0.7rem + 4vw, 2rem);
+    }
+    article p:nth-child(1):before {
+        left: -1.3rem;
+    }
+
+    article p:nth-child(1):after {
+        left: -3rem;
+        top: 1.2rem;
+    }
+    .kontakt-text{
+        font-size: 1.3rem;
+    }
+    .kontakt-block {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        background: linear-gradient(180deg, rgba(34, 34, 34, 1) 0%, rgba(89, 89, 89, 1) 100%);;
+    }
+    .kontakt-block h3 {
+        font-size: 2.5rem;
+    }
+    .kontakt-block h4 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    nav{
+        height: 65px;
+    }
+    .ham-menu{
+        top: 1.2rem;
+        height: 28px;
+        width: 28px;
+    }
+    .bio-head-grid {
+        grid-template-rows: 250px 100px 400px;
+        }
+        .bio-intro{
+            grid-row: 2;
+            grid-column: 1 / span 4;
+            padding-top: 0;
+            padding-left: 8px;
+            justify-self: center;
+            align-self: center;
+            max-width: 30ch;
+            font-size: clamp(1.1rem, 0.3333rem + 2.6667vw, 1.2rem);
+        }
+    .bio-head-grid > img {
+        grid-column: 1 / span 4;
+        justify-self: center;
+        grid-row: 3;
+        max-height: 400px;
+
+    }
+    article p {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+    }
+    .article-grid {
+        grid-template-rows: 100px 400px 120px;
+    }
+    article p:nth-child(1):before{
+        display: none
+    }
+    article p:nth-child(1):after{
+        display: none
+    }
+    article p:nth-child(2):before{
+        display: none;
+    }
+
+    article p:nth-child(2):after{
+        display: none
+    }
+    .gallery h2 {
+        font-size: 3rem;
+    }
+
+    .kontakt-text{
+        font-size: 1.2rem;
+    }
+    .kontakt-font{
+        font-size: clamp(1rem, 0.46rem + 2.4vw, 1.15rem);
+    }
+    .kontakt-font p:last-of-type{
+        font-size: clamp(1rem, 0.46rem + 2.4vw, 1.15rem);
+    }
+}
+
+@media screen and (max-width: 360px){
+    article p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        }
+    .kontakt-text {
+        font-size: 1rem;
+        padding: 1rem 0;
+    }
+    .kontakt-block h3 {
+        font-size: 2rem;
+    }
+    .kontakt-block h4 {
+        font-size: 1.2rem;
+    }
 }
