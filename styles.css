@@ -163,7 +163,7 @@ nav p{
     transition: ease-in-out 200ms;
 }
 .hero {
-    background-image:url("images/01.webp");
+    background-image:url("images_large/01.webp");
         height: 100vh;
         background-position: center;
         background-repeat: no-repeat;
@@ -517,8 +517,8 @@ article p:nth-child(2):after {
     color:var(--color-opa)
 }
 .kontakt-section {
-background: rgb(18, 18, 18);
-    background: linear-gradient(180deg, rgba(18, 18, 18, 1) 0%, rgba(85, 85, 85, 1) 100%);
+background: rgb(26, 26, 26);
+    background: linear-gradient(180deg, rgba(26, 26, 26, 1) 0%, rgba(85, 85, 85, 1) 100%);
     height: calc(100vh - 80px);
     display: flex;
     align-items: center;
@@ -635,7 +635,9 @@ nav{
 nav p {
     font-size: clamp(1.3rem, 0.8rem + 2.5vw, 2rem);
 }
-
+.hero{
+    background-image: url("images_thumb/mobile-hero.webp");
+}
 .nav-menu {
     display: flex;
     flex-direction: column;
