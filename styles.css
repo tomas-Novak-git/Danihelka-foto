@@ -5,6 +5,9 @@
     --color: rgb(0, 187, 244);
     --color-opa: rgba(0, 195, 255, 0.750);
     --background: transparent;
+    --link-color: rgb(0,
+        94,
+        128)
 }
 *,
 *::before,
@@ -316,7 +319,8 @@ nav p:hover .heading-strong{
     text-decoration: none;
     transition: ease-in-out 200ms;
     list-style: none;
-    color: var(--color);
+    color: var(--link-color);
+    font-weight: 500;
 }
 .anchor-styling:hover {
     color: var(--black);
