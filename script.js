@@ -37,12 +37,11 @@ const navMenu = document.querySelector(".nav-menu");
 
 // hamburger closer
 const hamburgerCloser = () => {
+    if(window.innerWidth <= 769) {
     hamMenu.classList.toggle("active");
     navMenu.classList.toggle("active");
+    }
 }
-
-// Lightbox JS
-
 
 
 sectionOneObserver.observe(sectionOne);
