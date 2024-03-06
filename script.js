@@ -9,7 +9,7 @@ const linkTwo = document.querySelector("#link-2")
 const linkThree = document.querySelector("#link-3")
 const linkFour = document.querySelector("#link-4")
 const linkFive = document.querySelector("#link-5")
-
+const navLogo = document.querySelector('.nav-logo')
 const sectionOneOptions= {
     rootMargin: "-250px 0px 0px 0px"
 };
@@ -37,12 +37,11 @@ const navMenu = document.querySelector(".nav-menu");
 
 // hamburger closer
 const hamburgerCloser = () => {
-    if(window.innerWidth <= 769) {
+    if(window.innerWidth <= 769){
     hamMenu.classList.toggle("active");
     navMenu.classList.toggle("active");
     }
 }
-
-
+hamMenu.addEventListener('click', hamburgerCloser)
+navMenu.addEventListener('click', hamburgerCloser)
 sectionOneObserver.observe(sectionOne);
-hamburgerCloser();
