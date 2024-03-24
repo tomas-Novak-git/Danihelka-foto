@@ -233,6 +233,7 @@ nav p:hover .heading-strong{
     font-size: 4rem;
     line-height: 4rem;
     color: var(--black);
+    font-weight: 700 ;
     margin-right: 30px;
     align-self: center;
     text-transform: uppercase;
@@ -595,7 +596,7 @@ i {
     .bio-heading {
         justify-self: flex-start;
     }
-    .bio-head-grid h1 {
+    .bio-head-grid-heading {
         font-size: clamp(3.5rem, 1.9862rem + 3.1496vw, 4rem);
     }
 }
@@ -605,7 +606,7 @@ i {
         grid-column: 1 / span 2;
         justify-self: center;
     }
-    .bio-heading h1 {
+    .bio-head-grid-heading{
         margin: 0;
         text-decoration: underline 2px var(--color-opa);
         text-underline-offset: 8px;
@@ -625,10 +626,10 @@ i {
 }
 
 @media screen and (max-width: 768px) {
-    .section-margin {
-            padding-top: 73px;
-            margin-top: -73px;
-        }
+.section-margin {
+        padding-top: 73px;
+        margin-top: -73px;
+    }
 nav{
     height: 73px;
 }
@@ -736,10 +737,10 @@ nav li {
 
 /* Bio */
 .bio-heading{
-    grid-column: 1 / span 4 ;
+    grid-column: 2 / span 4 ;
     justify-self: center;
 }
-.bio-heading h1 {
+.bio-heading-heading {
     margin: 0;
 }
 .bio-intro{
@@ -761,7 +762,7 @@ nav li {
     align-self: end;
     padding-left: 1rem;
 }
-.bio-heading h1:after {
+.bio-head-grid-heading:after {
     content: "";
     position: absolute;
     height: 1px;
@@ -948,12 +949,12 @@ article p:nth-child(2):after {
         justify-self: center;
         align-self: center;
     }
-    .bio-heading h1 {
+    .bio-head-grid-heading {
         font-size: clamp(2.5rem, 0.8333rem + 6.6667vw, 3rem);
         line-height: 3rem;
         text-underline-offset: 4px;
     }
-    .bio-heading p {
+    .bio-heading-p {
         font-size: clamp(1.7rem, 0.7rem + 4vw, 2rem);
     }
     article p:nth-child(1):before {
@@ -965,7 +966,7 @@ article p:nth-child(2):after {
         top: 1.2rem;
     }
     .kontakt-text{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     .kontakt-block {
         width: 100%;
@@ -1035,7 +1036,7 @@ article p:nth-child(2):after {
     }
 
     .kontakt-text{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .kontakt-font{
         font-size: clamp(1rem, 0.46rem + 2.4vw, 1.15rem);
