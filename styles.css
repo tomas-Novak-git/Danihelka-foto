@@ -229,16 +229,16 @@ nav p:hover .heading-strong{
     justify-self: center;
     align-self: end;
 }
-.bio-head-grid h1 {
+.bio-head-grid-heading {
     font-size: 4rem;
     line-height: 4rem;
     color: var(--black);
     margin-right: 30px;
     align-self: center;
     text-transform: uppercase;
-    position: relative;
+    position: relative; 
 }
-.bio-heading h1:after{
+.bio-head-grid-heading:after{
     content: "";
     position: absolute;
     height: 1px;
@@ -247,7 +247,7 @@ nav p:hover .heading-strong{
     right: -50px;
     background-color: var(--color);
 }
-.bio-heading p:after{
+.bio-heading-p:after{
     content: "";
     position: absolute;
     height: 1px;
@@ -257,7 +257,7 @@ nav p:hover .heading-strong{
     right: -80px;
     background-color: var(--color);
 }
-.bio-heading p {
+.bio-heading-p {
     position: relative;
     font-size: 2.5rem;
     font-weight: 200;
@@ -267,7 +267,7 @@ nav p:hover .heading-strong{
     transition: ease-in-out 200ms;
     cursor: default;
 }
-.bio-heading p:hover{
+.bio-heading-p:hover{
     color: var(--color);
 }
 
@@ -284,7 +284,7 @@ nav p:hover .heading-strong{
     max-width: 25ch;
     background-color: transparent;
     grid-row: 2;
-    font-weight: 300;
+    font-weight: 400;
     grid-column: 2;
     align-self: center;
     justify-self: center;
@@ -320,7 +320,7 @@ nav p:hover .heading-strong{
     transition: ease-in-out 200ms;
     list-style: none;
     color: var(--link-color);
-    font-weight: 500;
+    font-weight: 400;
 }
 .anchor-styling:hover {
     color: var(--black);
@@ -338,7 +338,7 @@ nav p:hover .heading-strong{
 }
 article p {
     font-size: 1.35rem;
-    font-weight: 300;
+    font-weight: 400;
     max-width: 45ch;
     /* padding: 8px 16px; */
 }
@@ -530,7 +530,7 @@ background: rgb(26, 26, 26);
     grid-row: 6;
     /* padding: 3rem 0; */
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
     max-width: 30ch;
     position: relative;
     color: var(--white);
@@ -797,7 +797,7 @@ nav li {
 }
 article p {
     font-size: 1.35rem;
-    font-weight: 300;
+    font-weight: 400;
     max-width: 45ch;
     /* padding: 8px 16px; */
 }
