@@ -164,7 +164,7 @@ nav p{
 }
 .hero {
     background-image:url("images_large/01.webp");
-        height: 100vh;
+        height: 100dvh;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
